@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.dgaps.android.BMI_CALCULATOR.R;
+
 
 public class SplashScreen extends Activity {
     ImageView ivSplash,iv_tween;

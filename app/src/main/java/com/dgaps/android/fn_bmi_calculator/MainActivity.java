@@ -22,8 +22,6 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dgaps.android.BMI_CALCULATOR.R;
-
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageButton;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dgaps.android.BMI_CALCULATOR">
+    package="com.dgaps.android.fn_bmi_calculator">
 
     <application
         android:allowBackup="true"
