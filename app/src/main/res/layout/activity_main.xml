@@ -1,76 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context="com.example.hp.fn_bmi_calculator.MainActivity">
+    android:layout_height="wrap_content"
+    android:background="@drawable/background">
 
-    <EditText
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"
-        android:id="@+id/et_weight"
-        android:hint="Weight in kg" />
+        android:layout_height="match_parent"
+        tools:context="com.dgaps.android.fn_bmi_calculator.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/nested"
-        android:layout_below="@+id/et_weight"
-        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/et_weight"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/edittext_style"
+            android:ems="10"
+            android:hint="Weight in kg"
+            android:inputType="number" />
+
+        <LinearLayout
+            android:id="@+id/nested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_weight"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enter height"
+                android:textColor="#fff"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/et_height_ft"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_style"
+                android:hint="ft"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/et_height_inch"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edittext_style"
+                android:hint="inch"
+                android:inputType="number" />
+        </LinearLayout>
+
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter height"
-            android:textSize="20dp"/>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_height_ft"
-            android:hint="ft"
-            android:inputType="number"/>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_height_inch"
-            android:hint="inch"
-            android:inputType="number"/>
-    </LinearLayout>
+            android:layout_below="@+id/btn_claculate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:fontFamily="cursive"
+            android:text="Result"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
 
-    <Button
-        android:text="Calculate BMI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nested"
-        android:layout_marginTop="30dp"
-        android:id="@+id/btn_claculate" />
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/tv_result"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:text="Result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_claculate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:id="@+id/tv_result" />
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/imageGif"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/linear"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1" />
+        </LinearLayout>
 
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/tv_result"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/btn_claculate"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/button_style"
+            android:text="Calculate BMI"
+            android:layout_below="@+id/nested"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</ScrollView>

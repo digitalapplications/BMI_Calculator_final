@@ -1,4 +1,4 @@
-package com.example.hp.fn_bmi_calculator;
+package com.dgaps.android.fn_bmi_calculator;
 
 import org.junit.Test;
 
