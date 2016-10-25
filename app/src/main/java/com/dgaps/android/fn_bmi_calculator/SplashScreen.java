@@ -10,11 +10,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-
+import android.widget.TextView;
 
 
 public class SplashScreen extends Activity {
     ImageView ivSplash,iv_tween;
+    TextView tv_company;
 
     ProgressBar pb;
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -26,6 +27,8 @@ public class SplashScreen extends Activity {
 
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        tv_company = (TextView) findViewById(R.id.tv_company);
+        tv_company.setText("Digital"+"\n\t\tApplications");
         pb = (ProgressBar) findViewById(R.id.progressBar2);
         pb.setVisibility(View.VISIBLE);
         //passing intent in a thread for specific time

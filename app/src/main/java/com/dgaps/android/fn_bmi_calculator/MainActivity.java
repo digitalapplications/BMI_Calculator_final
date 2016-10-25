@@ -147,9 +147,9 @@ public class MainActivity extends AppCompatActivity {
                 else if(Integer.parseInt(et_height_ft.getText().toString())==0){
                     Toast.makeText(MainActivity.this,"Height can not be 0",Toast.LENGTH_SHORT).show();
                 }
-                else if(Integer.parseInt(et_height_ft.getText().toString())>10){
+                else if(Integer.parseInt(et_height_ft.getText().toString())>15){
 
-                    et_height_ft.setError("Height must be less than 10 feet");
+                    et_height_ft.setError("Height must be less than 15 feet");
                 }
                 else if(Integer.parseInt(et_height_inch.getText().toString())>=13){
                     Toast.makeText(MainActivity.this,"Height in inch can not be more than 12",Toast.LENGTH_SHORT).show();
@@ -238,6 +238,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void imageClick(View view) {
+        et_height_ft.setText("");
+        et_weight.setText("");
+        et_height_inch.setText("");
+        et_weight.requestFocus();
     }
 }
 
