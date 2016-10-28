@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/background">
@@ -16,14 +15,12 @@
 
         <EditText
             android:id="@+id/et_weight"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="90dp"
             android:layout_below="@+id/radiolinear"
             android:background="@drawable/edittext_style"
-            android:ems="10"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:hint="Enter Weight"
             android:inputType="number" />
 
@@ -31,14 +28,13 @@
             android:id="@+id/nested"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/height_linear"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/et_weight"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Enter height"
                 android:textColor="#fff"
                 android:textSize="20dp" />
@@ -46,7 +42,7 @@
             <EditText
                 android:id="@+id/et_height_ft"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="@drawable/edittext_style"
                 android:hint="ft"
@@ -55,84 +51,33 @@
             <EditText
                 android:id="@+id/et_height_inch"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="150dp"
                 android:background="@drawable/edittext_style"
                 android:hint="inch"
                 android:inputType="number" />
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/et_weight"
-            android:id="@+id/height_linear">
-            <RadioGroup
-                android:id="@+id/radiogroup2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radiofeet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="feet"
-                    android:textColor="#fff"
-                    android:checked="true" />
-
-                <RadioButton
-                    android:id="@+id/radiocm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#fff"
-                    android:layout_marginLeft="20dp"
-                    android:text="cm" />
-
-            </RadioGroup>
-        </LinearLayout>
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_claculate"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="31dp"
+          android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
             android:fontFamily="cursive"
             android:text="Result"
             android:textColor="#fff"
             android:textSize="22dp"
             android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/linear"
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:layout_below="@+id/tv_result"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
-
-            <pl.droidsonroids.gif.GifImageView
-                android:id="@+id/imageGif"
-                android:layout_width="250dp"
-                android:layout_height="200dp"
-                android:layout_below="@+id/linear"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-
         <Button
             android:id="@+id/btn_claculate"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/button_style"
             android:text="Calculate BMI"
             android:layout_below="@+id/nested"
@@ -160,7 +105,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:id="@+id/radiolinear"
             android:layout_alignStart="@+id/et_weight">
             <RadioGroup
@@ -188,15 +133,23 @@
 
             </RadioGroup>
         </LinearLayout>
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/linear"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id" />
 
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imageGif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/tv_result"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp" />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/btn_claculate"
+            android:layout_toEndOf="@+id/btn_claculate">
+
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>
